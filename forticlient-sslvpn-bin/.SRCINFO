@@ -1,0 +1,20 @@
+pkgbase = forticlient-sslvpn-bin
+	pkgver = 4.4.2323
+	pkgrel = 1
+	url = https://hadler.me/linux/forticlient-sslvpn-deb-packages/
+	arch = i686
+	arch = x86_64
+	license = EULA
+	depends = ppp
+	depends = iproute2
+	conflicts = forticlientsslvpn
+	replaces = forticlientsslvpn
+	source = forticlient-sslvpn-bin.png
+	sha1sums = 2477e22435e57252c42c8c3c1e2ae55ca678584b
+	source_x86_64 = https://hadler.me/files/forticlient-sslvpn_4.4.2323-1_amd64.deb
+	sha1sums_x86_64 = 2ab5e13c539ab0a9f3755a9d88bbd3c596040e68
+	source_i686 = https://hadler.me/files/forticlient-sslvpn_4.4.2323-1_i386.deb
+	sha1sums_i686 = 1c69b0886a2cc66849b9137879d61031ca785102
+
+pkgname = forticlient-sslvpn-bin
+

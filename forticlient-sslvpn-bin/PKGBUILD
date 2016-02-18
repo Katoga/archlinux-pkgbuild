@@ -1,0 +1,50 @@
+# Maintainer: Katoga <katoga.cz@hotmail.com>
+pkgname=forticlient-sslvpn-bin
+pkgver=4.4.2323
+pkgrel=1
+#pkgdesc=""
+arch=('i686' 'x86_64')
+url="https://hadler.me/linux/forticlient-sslvpn-deb-packages/"
+license=('EULA')
+depends=('ppp' 'iproute2')
+conflicts=('forticlientsslvpn')
+replaces=('forticlientsslvpn')
+
+if [[ ${CARCH} == 'x86_64' ]]; then
+	source=(https://hadler.me/files/${pkgname:0:(-4)}_${pkgver}-1_amd64.deb)
+	sha1sums=('2ab5e13c539ab0a9f3755a9d88bbd3c596040e68')
+	_arch=64bit
+else
+	source=(https://hadler.me/files/${pkgname:0:(-4)}_${pkgver}-1_i386.deb)
+	sha1sums=('1c69b0886a2cc66849b9137879d61031ca785102')
+	_arch=32bit
+fi
+
+source[1]=${pkgname}.png
+sha1sums[1]=2477e22435e57252c42c8c3c1e2ae55ca678584b
+
+package() {
+	# unpack and verify source
+	tar -xJf data.tar.xz
+	tar -xzf control.tar.gz ./md5sums
+	md5sum -c md5sums > /dev/null
+
+	# move licence file to proper directory
+	install -Dm644 ${srcdir}/usr/share/doc/forticlient-sslvpn/copyright ${pkgdir}/usr/share/licenses/${pkgname}
+
+	install -Dm644 ${srcdir}/usr/share/applications/forticlient-sslvpn.desktop ${pkgdir}/usr/share/applications/${pkgname}.desktop
+	# remove she ".sh" extension from executable, no need to decide what architecture dir to enter
+	sed -i "s~forticlientsslvpn.sh~forticlientsslvpn~" ${pkgdir}/usr/share/applications/${pkgname}.desktop
+	# replace icon with own one
+	sed -i "s~forticlientsslvpn.gif~${pkgname}.png~" ${pkgdir}/usr/share/applications/${pkgname}.desktop
+	# modify path
+	sed -i "s~/opt/forticlient-sslvpn~/opt/${pkgname}~" ${pkgdir}/usr/share/applications/${pkgname}.desktop
+
+	# program icon
+	install -Dm644 ${srcdir}/${pkgname}.png ${pkgdir}/opt/${pkgname}/${pkgname}.png
+
+	# move all files from proper architecture directory to destination
+	cd ./opt/forticlient-sslvpn/${_arch}
+	find . -type f -exec install -D "{}" "$pkgdir/opt/$pkgname/{}" \;
+	cd - > /dev/null
+}
