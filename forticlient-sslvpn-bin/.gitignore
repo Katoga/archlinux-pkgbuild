@@ -1,5 +1,1 @@
-**
-!.gitignore
-!PKGBUILD
-!.SRCINFO
-!forticlient-sslvpn-bin.png
+*.deb

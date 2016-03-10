@@ -1,0 +1,9 @@
+# Eclipse IDE
+/.buildpath
+/.project
+/.settings
+
+# makepkg output
+/*/src
+/*/pkg
+/*/*.pkg.tar.*
