@@ -1,0 +1,22 @@
+pkgbase = hipchat-bin
+	pkgver = 4.0.1517
+	pkgrel = 1
+	url = https://hipchat.com/
+	arch = i686
+	arch = x86_64
+	depends = alsa-lib>=1.0.16
+	depends = glibc>=2.17
+	depends = libdbus>=1.1.4
+	depends = expat>=2.0.1
+	depends = fontconfig>=2.9.0
+	depends = freetype2>=2.3.9
+	depends = gcc>=4.1.1
+	depends = glib2>=2.35.9
+	depends = libice>=1.0.0
+	conflicts = hipchat
+	replaces = hipchat
+	source = https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client/pool/HipChat4-4.0.1517-Linux.deb
+	sha1sums = 3ec33fe7042d115638f34b18c3bbb0664e7b986e
+
+pkgname = hipchat-bin
+

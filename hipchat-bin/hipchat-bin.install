@@ -1,0 +1,14 @@
+post_install() {
+	# create symbolic link to the executable
+	if [ -e /opt/HipChat4/bin/HipChat4 ]
+	then
+		ln -s /opt/HipChat4/bin/HipChat4 /usr/local/bin/hipchat4
+	else
+		echo "Symbolic link in /usr/local/bin not created for hipchat4 because HipChat4 was not installed in the default location."
+	fi
+}
+
+post_remove() {
+	# rm symbolic link to the executable
+	rm -f /usr/local/bin/hipchat4
+}
