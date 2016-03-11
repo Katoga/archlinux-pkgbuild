@@ -30,7 +30,7 @@ package() {
 	md5sum -c md5sums > /dev/null
 
 	# move licence file to proper directory
-	install -Dm644 ${srcdir}/usr/share/doc/forticlient-sslvpn/copyright ${pkgdir}/usr/share/licenses/${pkgname}
+	install -Dm644 ${srcdir}/usr/share/doc/forticlient-sslvpn/copyright ${pkgdir}/usr/share/licenses/${pkgname}/EULA
 
 	install -Dm644 ${srcdir}/usr/share/applications/forticlient-sslvpn.desktop ${pkgdir}/usr/share/applications/${pkgname}.desktop
 	# remove she ".sh" extension from executable, no need to decide what architecture dir to enter
