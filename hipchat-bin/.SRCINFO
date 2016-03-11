@@ -1,9 +1,12 @@
 pkgbase = hipchat-bin
+	pkgdesc = A group messaging app built and designed for team communication and collaboration.
 	pkgver = 4.0.1517
 	pkgrel = 1
-	url = https://hipchat.com/
+	url = https://www.hipchat.com/
+	install = hipchat-bin.install
 	arch = i686
 	arch = x86_64
+	license = custom
 	depends = alsa-lib>=1.0.16
 	depends = glibc>=2.17
 	depends = libdbus>=1.1.4
@@ -11,12 +14,49 @@ pkgbase = hipchat-bin
 	depends = fontconfig>=2.9.0
 	depends = freetype2>=2.3.9
 	depends = gcc>=4.1.1
+	depends = mesa-libgl
 	depends = glib2>=2.35.9
 	depends = libice>=1.0.0
+	depends = nspr>=4.9
+	depends = nss>=3.14.4
+	depends = libsm
+	depends = libx11>=1.4.99.1
+	depends = libxcb>=1.6
+	depends = libxau
+	depends = xcb-util-keysyms>=0.3.9
+	depends = libxcomposite>=0.3
+	depends = libxcursor>1.1.2
+	depends = libxdamage>=1.1
+	depends = libxdmcp
+	depends = libxext
+	depends = libxfixes
+	depends = libxi>=1.2.99.4
+	depends = libxkbcommon>=0.2.0
+	depends = libxrandr
+	depends = libxrender
+	depends = libxss
+	depends = libxslt
+	depends = libxtst
 	conflicts = hipchat
 	replaces = hipchat
 	source = https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client/pool/HipChat4-4.0.1517-Linux.deb
+	source = Atlassian_Customer_Agreement.txt
+	source = Privacy_Policy.txt
+	source = Acceptable_Use_Policy.txt
+	source = Customer_Use_Addendum.txt
+	source = Third_Party_Code_in_Atlassian_Products.txt
+	source = Reporting_Copyright_and_Trademark_Violations.txt
+	source = Service-Specific_Terms.txt
+	source = Atlassian_Professional_Services_Agreement.txt
 	sha1sums = 3ec33fe7042d115638f34b18c3bbb0664e7b986e
+	sha1sums = 9f8fcdfb1207d2df50c52e5d09123f906c0cc6f1
+	sha1sums = 54d985960815550d45e577a01a966d0a92a7b6f0
+	sha1sums = 45e557039965d6002a6d773543a6746a3b4f9f18
+	sha1sums = 307a4d19f6e7035ef0e2f73885c325044a77a2b4
+	sha1sums = f60c0f9aed4591f693dae8e35992dfb38a01c4f0
+	sha1sums = c8e9a710e5b6cf843aeeb3655c924151da3e9a5a
+	sha1sums = 42fbebc63d1a12108c987c2c8347b138c65cdbd7
+	sha1sums = cd7a0dec3a0bd2c8ad0328a0435aee7337a08b29
 
 pkgname = hipchat-bin
 
