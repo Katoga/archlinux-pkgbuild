@@ -1,0 +1,12 @@
+v1.04 2013-12-31
+* Option added to disable dropping items when character dies.
+* Option added to change speed of mouse and keyboard turn rates from 20% to 200%.
+* Toggling between look and mouse mode no longer causes the look angle to jump.
+* Added missing music files (MUSIC6 and DANCE). Now music can play on all adventure levels.
+* Fixed a crash at the end of the first level of Elmore's Retreat.
+* Fixed leak when playing a long time that would cause music to stop playing or crash.
+* Fixed problem when teleporting to water covered area while wearing ring of water walking. It no longer constantly teleports back and forth.
+* Movement speed is now properly recalculated when strength changes from spells.
+* Health and Mana properly update when using amulets and rings fo food and water conservation/nourishment.
+* Improved diagonal strafe/sidestep calculations.
+* Players can no longer move when dead.

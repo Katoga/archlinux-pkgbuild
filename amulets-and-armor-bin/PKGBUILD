@@ -1,0 +1,33 @@
+# Maintainer: Katoga <katoga.cz@hotmail.com>
+pkgname=amulets-and-armor-bin
+pkgver=1.04
+pkgrel=1
+epoch=
+pkgdesc="Mission-based action role-playing game."
+arch=('any')
+url="http://amuletsandarmor.com/"
+license=('custom')
+depends=('dosbox')
+noextract=("AAClassicV${pkgver}_DOS.zip")
+changelog='.Changelog'
+source=(
+	"http://amuletsandarmor.com/download/AAClassicV${pkgver}_DOS.zip"
+	"${pkgname}.desktop"
+	"${pkgname}.sh"
+)
+sha1sums=(
+	"d4e27414715008bd1018039bb144fc148f19aceb"
+	"5c34a76e194c9e07be9af384f074b8b12c1a673e"
+	"f965d0471d13f5715e77a45b08166286f2777299"
+)
+
+package() {
+	mkdir -p ${pkgdir}/opt/amulets-and-armor-bin
+	bsdtar -xC ${pkgdir}/opt/amulets-and-armor-bin -f ${srcdir}/AAClassicV${pkgver}_DOS.zip
+
+	mkdir -p ${pkgdir}/usr/share/applications
+	install -Dm644 ${srcdir}/${pkgname}.desktop ${pkgdir}/usr/share/applications/
+	
+	mkdir -p ${pkgdir}/usr/bin
+	install -Dm755 ${srcdir}/${pkgname}.sh ${pkgdir}/usr/bin/
+}

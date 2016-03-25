@@ -1,0 +1,19 @@
+pkgbase = amulets-and-armor-bin
+	pkgdesc = Mission-based action role-playing game.
+	pkgver = 1.04
+	pkgrel = 1
+	url = http://amuletsandarmor.com/
+	changelog = .Changelog
+	arch = any
+	license = custom
+	depends = dosbox
+	noextract = AAClassicV1.04_DOS.zip
+	source = http://amuletsandarmor.com/download/AAClassicV1.04_DOS.zip
+	source = amulets-and-armor-bin.desktop
+	source = amulets-and-armor-bin.sh
+	sha1sums = d4e27414715008bd1018039bb144fc148f19aceb
+	sha1sums = 5c34a76e194c9e07be9af384f074b8b12c1a673e
+	sha1sums = f965d0471d13f5715e77a45b08166286f2777299
+
+pkgname = amulets-and-armor-bin
+

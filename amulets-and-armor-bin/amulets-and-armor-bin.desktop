@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Amulets and Armor
+Comment=Mission-based action role-playing game.
+Exec=/usr/bin/amulets-and-armor.sh
+Terminal=false
+Categories=Game;
