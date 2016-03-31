@@ -1,0 +1,13 @@
+pkgbase = mariamole-bin
+	pkgdesc = An alternative Arduino IDE.
+	pkgver = 0.7
+	pkgrel = 1
+	url = http://dalpix.com/mariamole
+	arch = x86_64
+	license = GPL3
+	depends = arduino
+	source = http://devio.us/~gabrield/mariamole/mariamole_0.7-2-g9cba_amd64.deb
+	sha1sums = SKIP
+
+pkgname = mariamole-bin
+

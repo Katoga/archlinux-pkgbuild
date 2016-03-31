@@ -1,0 +1,25 @@
+# Maintainer: Katoga <katoga.cz@hotmail.com>
+pkgname=mariamole-bin
+pkgver=0.7
+pkgrel=1
+pkgdesc="An alternative Arduino IDE (binary version from official DEB)."
+arch=('x86_64')
+url="http://dalpix.com/mariamole"
+license=('GPL3')
+depends=('arduino' 'qscintilla-qt5')
+install=${pkgname}.install
+source=(
+	"http://devio.us/~gabrield/mariamole/mariamole_${pkgver}-2-g9cba_amd64.deb"
+)
+sha1sums=(
+	"f877e589b663fdba24b3946f3352cff7778dd859"
+)
+
+package() {
+	# unpack and verify source
+	tar -xJf data.tar.xz
+	tar -xzf control.tar.gz ./md5sums
+	md5sum -c md5sums > /dev/null
+
+	cp -R ${srcdir}/{etc,usr} ${pkgdir}
+}

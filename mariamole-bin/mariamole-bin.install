@@ -1,0 +1,7 @@
+post_install() {
+	ln -s /usr/lib/libqscintilla2-qt5.so /usr/lib/libqt5scintilla2.so.11
+}
+
+post_remove() {
+	rm /usr/lib/libqt5scintilla2.so.11
+}
