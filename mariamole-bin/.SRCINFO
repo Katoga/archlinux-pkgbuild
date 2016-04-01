@@ -1,13 +1,15 @@
 pkgbase = mariamole-bin
-	pkgdesc = An alternative Arduino IDE.
+	pkgdesc = An alternative Arduino IDE (binary version from official DEB).
 	pkgver = 0.7
 	pkgrel = 1
 	url = http://dalpix.com/mariamole
+	install = mariamole-bin.install
 	arch = x86_64
 	license = GPL3
 	depends = arduino
+	depends = qscintilla-qt5
 	source = http://devio.us/~gabrield/mariamole/mariamole_0.7-2-g9cba_amd64.deb
-	sha1sums = SKIP
+	sha1sums = f877e589b663fdba24b3946f3352cff7778dd859
 
 pkgname = mariamole-bin
 
