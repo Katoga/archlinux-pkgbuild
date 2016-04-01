@@ -1,0 +1,39 @@
+# Maintainer: Katoga <katoga.cz@hotmail.com>
+pkgname=mariamole
+pkgver=0.7
+pkgrel=1
+pkgdesc="An alternative Arduino IDE."
+arch=('i686' 'x86_64')
+url="http://dalpix.com/mariamole"
+license=('GPL3')
+depends=('arduino' 'qt5-xmlpatterns' 'qt5-serialport' 'qscintilla-qt5')
+makedepends=('cmake')
+source=(
+	"https://github.com/aporto/mariamole/archive/mariamole_${pkgver}.tar.gz"
+)
+sha1sums=(
+	"f87848813b219dd4d844f8bc0e69e6f6e172df9e"
+)
+
+_sources="${pkgname}-${pkgname}_${pkgver}"
+
+build() {
+	cd ${srcdir}/${_sources}
+
+	# not checked out from git - supply our own "git version number"
+	sed -i "s~\" \`git describe --tags --abbrev=1\`~ ${pkgver}\"~" ${srcdir}/${_sources}/src/get_git_version_unix.sh
+
+	# different name of library (original is in debian)
+	sed -i "s~qt5scintilla2~qscintilla2-qt5~" ${srcdir}/${_sources}/src/CMakeLists.txt
+
+	export DESTDIR=${pkgdir}
+
+	cmake .
+	make
+}
+
+package() {
+	cd ${srcdir}/${_sources}
+	
+	make INSTALL_ROOT=${pkgdir} install
+}

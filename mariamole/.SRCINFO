@@ -1,0 +1,18 @@
+pkgbase = mariamole
+	pkgdesc = An alternative Arduino IDE.
+	pkgver = 0.7
+	pkgrel = 1
+	url = http://dalpix.com/mariamole
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = cmake
+	depends = arduino
+	depends = qt5-xmlpatterns
+	depends = qt5-serialport
+	depends = qscintilla-qt5
+	source = https://github.com/aporto/mariamole/archive/mariamole_0.7.tar.gz
+	sha1sums = f87848813b219dd4d844f8bc0e69e6f6e172df9e
+
+pkgname = mariamole
+
