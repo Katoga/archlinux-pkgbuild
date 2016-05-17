@@ -3,6 +3,9 @@
 /.project
 /.settings
 
+# IDEA
+/.idea
+
 # makepkg output
 /*/src
 /*/pkg

@@ -1,7 +1,7 @@
 # Maintainer: Katoga <katoga.cz@hotmail.com>
 pkgname=forticlient-sslvpn-bin
-pkgver=4.4.2323
-pkgrel=1
+pkgver=4.4.2327
+pkgrel=2
 #pkgdesc=""
 arch=('i686' 'x86_64')
 url="https://hadler.me/linux/forticlient-sslvpn-deb-packages/"
@@ -10,18 +10,19 @@ depends=('ppp' 'iproute2')
 conflicts=('forticlientsslvpn')
 replaces=('forticlientsslvpn')
 
+source_x86_64=(https://hadler.me/files/${pkgname:0:(-4)}_${pkgver}-${pkgrel}_amd64.deb)
+sha1sums_x86_64=('f4a9d5fcee955ed555b26a02da9c3595aa1ba8f1')
+source_i686=(https://hadler.me/files/${pkgname:0:(-4)}_${pkgver}-${pkgrel}_i386.deb)
+sha1sums_i686=('c606df3f2ceaf913cbda8cddccf75bbb97c0ec68')
+
 if [[ ${CARCH} == 'x86_64' ]]; then
-	source=(https://hadler.me/files/${pkgname:0:(-4)}_${pkgver}-1_amd64.deb)
-	sha1sums=('2ab5e13c539ab0a9f3755a9d88bbd3c596040e68')
 	_arch=64bit
 else
-	source=(https://hadler.me/files/${pkgname:0:(-4)}_${pkgver}-1_i386.deb)
-	sha1sums=('1c69b0886a2cc66849b9137879d61031ca785102')
 	_arch=32bit
 fi
 
-source[1]=${pkgname}.png
-sha1sums[1]=2477e22435e57252c42c8c3c1e2ae55ca678584b
+source=(${pkgname}.png)
+sha1sums=('2477e22435e57252c42c8c3c1e2ae55ca678584b')
 
 package() {
 	# unpack and verify source
