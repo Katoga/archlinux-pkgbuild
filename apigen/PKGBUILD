@@ -1,0 +1,15 @@
+# Maintainer: Katoga <katoga.cz@hotmail.com>
+pkgname=apigen
+pkgver=4.1.0
+pkgrel=1
+pkgdesc="Smart and Readable Documentation for your PHP project"
+arch=('any')
+url="http://www.apigen.org/"
+license=('MIT')
+depends=('php>=5.4')
+source=('http://apigen.org/apigen.phar')
+sha256sums=('d101412ea02ece060046e8b62ca82d4f32f9eebe911c515500bc1c1888a48535')
+
+package() {
+	install -D apigen.phar ${pkgdir}/usr/bin/apigen
+}
