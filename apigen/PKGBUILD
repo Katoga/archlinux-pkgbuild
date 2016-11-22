@@ -7,9 +7,17 @@ arch=('any')
 url="http://www.apigen.org/"
 license=('MIT')
 depends=('php>=5.4')
-source=('http://apigen.org/apigen.phar')
-sha256sums=('d101412ea02ece060046e8b62ca82d4f32f9eebe911c515500bc1c1888a48535')
+source=(
+	'http://apigen.org/apigen.phar'
+	'LICENSE'
+)
+sha256sums=(
+	'd101412ea02ece060046e8b62ca82d4f32f9eebe911c515500bc1c1888a48535'
+	'2e5a9e806bc0b705f11f500ea57568ab1f4a3d5e63aa4b5bd3ecac3cf03e8fef'
+)
 
 package() {
+	install -Dm0644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+
 	install -D apigen.phar ${pkgdir}/usr/bin/apigen
 }
