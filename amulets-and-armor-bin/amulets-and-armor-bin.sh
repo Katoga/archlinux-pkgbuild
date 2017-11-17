@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /opt/amulets-and-armor-bin && \
+cd /opt/amulets-and-armor-bin/AAClassic && \
 dosbox -conf ./dosbox.conf
