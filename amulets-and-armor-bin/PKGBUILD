@@ -8,26 +8,32 @@ arch=('any')
 url="http://amuletsandarmor.com/"
 license=('custom')
 depends=('dosbox')
-noextract=("AAClassicV${pkgver}_DOS.zip")
 changelog='.Changelog'
 source=(
 	"http://amuletsandarmor.com/download/AAClassicV${pkgver}_DOS.zip"
 	"${pkgname}.desktop"
 	"${pkgname}.sh"
 )
-sha1sums=(
-	"d4e27414715008bd1018039bb144fc148f19aceb"
-	"58d70ac2c42ea0469c325654c53890d6c73425c1"
-	"f965d0471d13f5715e77a45b08166286f2777299"
+sha256sums=(
+	"e791afa89d81c07d115bc4771fa9b116c555a1a8bcb27a9cb9aea2e0798acef2"
+	"b29652da0b56e355abb4628cbf53eecbad10296c1980edbd1d41903ce15e7723"
+	"45be5d82234e52d7184f559b3b8c43f19f55ec9117731f83a7817eab8ef4cfce"
 )
 
 package() {
-	mkdir -p ${pkgdir}/opt/amulets-and-armor-bin
-	bsdtar -xC ${pkgdir}/opt/amulets-and-armor-bin -f ${srcdir}/AAClassicV${pkgver}_DOS.zip
+	mkdir -m 0775 -p ${pkgdir}/opt/${pkgname}/AAClassic/
+
+	for _dir in AAMUSIC MAPDESC; do
+		mkdir -m 0775 -p ${pkgdir}/opt/${pkgname}/AAClassic/${_dir}
+		install -m664 ${srcdir}/${_dir}/* ${pkgdir}/opt/${pkgname}/AAClassic/${_dir}/
+	done
+	find ${srcdir}/ -type f | xargs -I {} install -m644 {} ${pkgdir}/opt/${pkgname}/AAClassic/
+
+	chown -R :games ${pkgdir}/opt/${pkgname}/AAClassic
 
 	mkdir -p ${pkgdir}/usr/share/applications
 	install -Dm644 ${srcdir}/${pkgname}.desktop ${pkgdir}/usr/share/applications/
-	
+
 	mkdir -p ${pkgdir}/usr/bin
 	install -Dm755 ${srcdir}/${pkgname}.sh ${pkgdir}/usr/bin/
 }
