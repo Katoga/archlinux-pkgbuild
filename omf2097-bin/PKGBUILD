@@ -36,7 +36,6 @@ prepare() {
 package() {
 	mkdir -m 0775 -p ${pkgdir}/opt/${pkgname}/OMF2097
 	chown :games ${pkgdir}/opt/${pkgname}/OMF2097
-	chmod g+s ${pkgdir}/opt/${pkgname}/OMF2097
 
 	install -m 0664 -g games ${srcdir}/OMF2097/* ${pkgdir}/opt/${pkgname}/OMF2097/
 	install -m 0644 -g games ${srcdir}/${pkgname}.png ${pkgdir}/opt/${pkgname}/${pkgname}.png
