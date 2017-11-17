@@ -15,10 +15,10 @@ source=(
 	"${pkgname}.desktop"
 	"${pkgname}.sh"
 )
-sha1sums=(
-	"d4e27414715008bd1018039bb144fc148f19aceb"
-	"58d70ac2c42ea0469c325654c53890d6c73425c1"
-	"f965d0471d13f5715e77a45b08166286f2777299"
+sha256sums=(
+	"e791afa89d81c07d115bc4771fa9b116c555a1a8bcb27a9cb9aea2e0798acef2"
+	"b29652da0b56e355abb4628cbf53eecbad10296c1980edbd1d41903ce15e7723"
+	"dc5cfae941985a7a244f76d7cb83d5f422e7b7eaa438c22ae2a307272e460027"
 )
 
 package() {
@@ -27,7 +27,7 @@ package() {
 
 	mkdir -p ${pkgdir}/usr/share/applications
 	install -Dm644 ${srcdir}/${pkgname}.desktop ${pkgdir}/usr/share/applications/
-	
+
 	mkdir -p ${pkgdir}/usr/bin
 	install -Dm755 ${srcdir}/${pkgname}.sh ${pkgdir}/usr/bin/
 }
