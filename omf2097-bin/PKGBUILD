@@ -1,7 +1,7 @@
 # Maintainer: Katoga <katoga.cz@hotmail.com>
 pkgname=omf2097-bin
 pkgver=2.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Fighting game featuring Human Assisted Robots'
 arch=('any')
 url="http://www.omf2097.com/"
