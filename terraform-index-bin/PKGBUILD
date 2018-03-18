@@ -7,7 +7,7 @@ arch=('x86_64')
 url="https://github.com/mauve/terraform-index"
 license=('BSD')
 source=(
-	'https://github.com/mauve/terraform-index/releases/download/0.0.2/terraform-index-0.0.2-linux-amd64.zip'
+	"https://github.com/mauve/terraform-index/releases/download/${pkgver}/terraform-index-${pkgver}-linux-amd64.zip"
 	'LICENSE'
 )
 sha256sums=(
@@ -16,7 +16,7 @@ sha256sums=(
 )
 
 package() {
-	install -Dm644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 
-	install -Dm755 ${srcdir}/terraform-index ${pkgdir}/usr/local/bin/terraform-index
+	install -Dm755 "${srcdir}/terraform-index" "${pkgdir}/usr/local/bin/terraform-index"
 }
